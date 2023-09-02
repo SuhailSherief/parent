@@ -15,7 +15,10 @@ jobs:
               with:
                   token: ${{ secrets.GITHUB_TOKEN }}
                   submodules: false
+            
+            - name: Checkout submodules
+              run: git submodule update --init --recursive
 
-            - name: Update Submodules
+            - name: Status
               run: |
                   echo daddy chill
