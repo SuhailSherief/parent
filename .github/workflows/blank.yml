@@ -15,5 +15,5 @@ jobs:
 
             - name: Update Submodules
               run: |
-                  git submodule update --init --recursive
                   git submodule update --recursive --remote
+                  echo daddy chill
