@@ -1,19 +1,21 @@
-name: submodules update
+name: Update Submodules
 
 on:
-  push:
-    branches: [ "main" ]
-  workflow_dispatch:
-
+    push:
+        branches: [ main ]
+    workflow_dispatch:
+    
 jobs:
     update_submodules:
         name: Update Submodules
         runs-on: ubuntu-latest        
         steps:
             - name: Checkout
-              uses: actions/checkout@v3
+              uses: actions/checkout@v2
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  submodules: true
 
             - name: Update Submodules
               run: |
-                  git submodule update --recursive --remote
                   echo daddy chill
